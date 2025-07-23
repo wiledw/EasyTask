@@ -30,6 +30,14 @@ This is the backend API for the EasyTask application, built with ASP.NET Core an
    ```
    The API will be available at `http://localhost:5000` (or as configured).
 
+## Accessing the API Documentation (Swagger UI)
+
+- **Swagger UI** is enabled by default in development mode.
+- After running the API, open your browser and go to:
+  - [http://localhost:5000/swagger](http://localhost:5000/swagger)
+- Here, you can view all available API endpoints, see request/response schemas, and interactively test the API.
+- If you change the port or host, adjust the URL accordingly.
+
 ## Explanation Notes
 
 - This API provides endpoints for managing tasks (CRUD operations).
