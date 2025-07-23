@@ -1,46 +1,71 @@
-# Getting Started with Create React App
+# EasyTask Frontend
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is the frontend for the EasyTask application, built with React and TypeScript using Create React App.
 
-## Available Scripts
+## Setup Steps
 
-In the project directory, you can run:
+1. **Install dependencies:**
+   ```sh
+   npm install
+   ```
+2. **Start the development server:**
+   ```sh
+   npm start
+   ```
+   The app will run at [http://localhost:3000](http://localhost:3000).
 
-### `npm start`
+3. **Build for production:**
+   ```sh
+   npm run build
+   ```
+   The production-ready files will be in the `build/` folder.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Explanation Notes
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- This frontend communicates with the EasyTask backend API to manage tasks.
+- It uses React functional components and hooks for state management.
+- All API calls are organized in the `src/api` folder.
+- Components are modular and located in `src/components`.
 
-### `npm test`
+## File Structure
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```
+task-ui/
+├── public/                # Static assets and the HTML template
+├── src/
+│   ├── api/
+│   │   └── task.ts        # API functions for task operations (GET, POST, PUT, DELETE)
+│   ├── components/
+│   │   ├── TaskList.tsx   # Displays the list of tasks
+│   │   ├── TaskItem.tsx   # Represents a single task item with actions
+│   │   └── TaskForm.tsx   # Form to add a new task
+│   ├── App.tsx            # Main app component, sets up layout and routing
+│   ├── index.tsx          # Entry point, renders the app
+│   ├── App.css            # Styles for the App component
+│   ├── index.css          # Global styles
+│   ├── logo.svg           # React logo
+│   ├── reportWebVitals.ts # Performance measuring (optional)
+│   ├── setupTests.ts      # Test setup for Jest
+│   ├── App.test.tsx       # Example test for App component
+│   └── react-app-env.d.ts # TypeScript environment definitions
+├── package.json           # Project metadata and scripts
+├── package-lock.json      # Dependency lock file
+├── tsconfig.json          # TypeScript configuration
+├── .gitignore             # Files and folders to ignore in git
+└── README.md              # This file
+```
 
-### `npm run build`
+## Component Overview
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- **TaskList.tsx**: Fetches and displays all tasks using the API. Renders a list of `TaskItem` components.
+- **TaskItem.tsx**: Shows a single task, with options to toggle completion or delete.
+- **TaskForm.tsx**: Provides a form to add a new task.
+- **task.ts**: Contains functions to interact with the backend API (fetch, create, update, delete tasks).
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Notes
+- Make sure the backend API is running and accessible for the frontend to function properly.
+- You can customize styles in the CSS files as needed.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). For more details, see the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
